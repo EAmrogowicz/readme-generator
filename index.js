@@ -47,6 +47,21 @@ inquirer
       ],
       name: "license",
     },
+    {
+      type: "input",
+      message: "Write project contributing",
+      name: "contributing",
+    },
+    {
+      type: "input",
+      message: "Write project tests",
+      name: "tests",
+    },
+    {
+      type: "input",
+      message: "Write project questions",
+      name: "questions",
+    },
   ])
   .then((answers) => {
     console.log(answers);
@@ -59,7 +74,7 @@ inquirer
   })
   .catch((error) => {
     if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
+      console.log("Prompt couldn't be rendered in the current environment");
     } else {
       // Something else went wrong
     }
