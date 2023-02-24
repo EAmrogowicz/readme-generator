@@ -18,27 +18,27 @@ inquirer
   .prompt([
     {
       type: "input",
-      message: "Write title of your project",
+      message: "What is title of your project:",
       name: "title",
     },
     {
       type: "input",
-      message: "Write project description",
+      message: "What is the project description:",
       name: "description",
     },
     {
       type: "input",
-      message: "Write project installation",
+      message: "What is the project installation:",
       name: "installation",
     },
     {
       type: "input",
-      message: "Write project usage",
+      message: "What is the project usage:",
       name: "usage",
     },
     {
       type: "list",
-      message: "Choose license",
+      message: "What is the project license, choose one from the list: ",
       choices: [
         "N/A",
         "MIT",
@@ -49,18 +49,23 @@ inquirer
     },
     {
       type: "input",
-      message: "Write project contributing",
+      message: "What is your project contributing in:",
       name: "contributing",
     },
     {
       type: "input",
-      message: "Write project tests",
+      message: "Write are the project tests:",
       name: "tests",
     },
     {
       type: "input",
-      message: "Write project questions",
-      name: "questions",
+      message: "Write your gitHub username:",
+      name: "username",
+    },
+    {
+      type: "input",
+      message: "Write your email:",
+      name: "email",
     },
   ])
   .then((answers) => {
