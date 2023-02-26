@@ -27,7 +27,7 @@ ${licenseBadge[answers.license]}
 ## Description
   ${answers.description}
 
-## Table of Content
+## Table of Contents
  1. [Installation](#installation)
  1. [Usage](#usage)
  1. [License](#license)
