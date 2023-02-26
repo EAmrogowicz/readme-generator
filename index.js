@@ -2,32 +2,17 @@
 const fs = require("fs");
 // generate path to the file
 const path = require("path");
-
-const https = require("https");
 // prompt for questions
 const inquirer = require("inquirer");
+const util = require("util");
 // creates data to be written down by fs
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// console.log(generateMarkdown({ title: "Ewelina" }));
-
-// list of licenses
-const gitHubLicenses = {
-  MIT: "https://raw.githubusercontent.com/git/git-scm.com/main/MIT-LICENSE.txt",
-};
-
-// function to write README file
-function writeToFile(test, data) {
-  const generateMD = generateMarkdown(data);
-
-  fs.writeFile("test.md", generateMD, (err) =>
-    err ? console.error(err) : console.log("Success!")
-  );
-}
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // Request for information
-inquirer
-  .prompt([
+const promptUser = () =>
+  inquirer.prompt([
     {
       type: "input",
       message: "What is title of your project:",
@@ -55,7 +40,9 @@ inquirer
         "N/A",
         "MIT",
         "GNU General Public License v3.0",
-        "Academic Free License v3.0",
+        "Apache License 2.0",
+        "Boost Software License 1.0",
+        "The Unlicense",
       ],
       name: "license",
     },
@@ -79,32 +66,13 @@ inquirer
       message: "Write your email:",
       name: "email",
     },
-  ])
-  .then((answers) => {
-    console.log(answers);
+  ]);
 
-    if (answers.license == "N/A") {
-    } else {
-      const licenseUrl = gitHubLicenses[answers.license];
-      https
-        .get(licenseUrl, (res) => {
-          res.on("data", (body) => {
-            answers.licenseText = body.toString();
-            writeToFile("test", answers);
-          });
-        })
-        .on("error", (e) => {
-          console.log(e);
-        });
-    }
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      console.log(error);
-    } else {
-      console.log("Unexpected Error");
-    }
-  });
+// function to write README file
+promptUser()
+  .then((answers) => writeFileAsync("test.md", generateMarkdown(answers)))
+  .then(() => console.log("Success!"))
+  .catch((err) => console.error(err));
 
 // function to initialize program
 function init() {}

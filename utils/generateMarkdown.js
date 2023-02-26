@@ -1,34 +1,42 @@
+const licenseList = require("./licenseList");
+const moment = require("moment"); // require
+const year = moment().format("YYYY");
+
 // function to generate markdown for README
-function generateMarkdown(data) {
-  let licenseType;
-  if (data.license == "N/A") {
-    licenseType = `This project does NOT have a license.`;
+function generateMarkdown(answers) {
+  let licenseText;
+
+  if (answers.license == "N/A") {
+    licenseText = `This project does NOT have a license.`;
+  } else if (answers.license == "MIT") {
+    licenseText = `${answers.license}
+    Copyright (c) ${year} ${answers.username}
+    ${licenseList[answers.license]}`;
   } else {
-    licenseType = `This project is licensed under the terms of the ${data.license} license.`;
+    licenseText = `${answers.license};
+    ${licenseList[answers.license]}`;
   }
 
   return `
-# ${data.title}
+# ${answers.title}
 ## Description
-  ${data.description}
+  ${answers.description}
 ## Installation
-  ${data.installation}
+  ${answers.installation}
 ## Usage
-  ${data.usage}
+  ${answers.usage}
 ## License
-  ${licenseType}
-
-  ${data.licenseText}
+  ${licenseText}
 ## Contributing
-  ${data.contributing}
+  ${answers.contributing}
 ## Tests
-  ${data.tests}
+  ${answers.tests}
 ## Questions
-  If you have additional questions, send me a message at ${data.email}.
-  View more of my projects on my Github profile: ${data.username}: 
+  If you have additional questions, send me a message at ${answers.email}.
+  View more of my projects on my Github profile: ${answers.username}: 
 `;
 }
 
 module.exports = generateMarkdown;
 
-//   ## ${data.tableOfContent}
+//   ## ${answers.tableOfContent}
