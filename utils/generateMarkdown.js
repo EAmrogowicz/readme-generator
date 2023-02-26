@@ -7,22 +7,25 @@ function generateMarkdown(data) {
     licenseType = `This project is licensed under the terms of the ${data.license} license.`;
   }
 
-  return `# ${data.title}
-    ## Description
-      ${data.description}
-    ## Installation
-      ${data.installation}
-    ## Usage
-      ${data.usage}
-    ## License
-      ${licenseType}
-    ## Contributing
-      ${data.contributing}
-    ## Tests
-      ${data.tests}
-    ## Questions
-      If you have additional questions, send me a message at ${data.email}.
-      View more of my projects on my Github profile: ${data.username}: 
+  return `
+# ${data.title}
+## Description
+  ${data.description}
+## Installation
+  ${data.installation}
+## Usage
+  ${data.usage}
+## License
+  ${licenseType}
+
+  ${data.licenseText}
+## Contributing
+  ${data.contributing}
+## Tests
+  ${data.tests}
+## Questions
+  If you have additional questions, send me a message at ${data.email}.
+  View more of my projects on my Github profile: ${data.username}: 
 `;
 }
 

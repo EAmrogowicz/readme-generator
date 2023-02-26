@@ -2,6 +2,8 @@
 const fs = require("fs");
 // generate path to the file
 const path = require("path");
+
+const https = require("https");
 // prompt for questions
 const inquirer = require("inquirer");
 // creates data to be written down by fs
@@ -10,10 +12,20 @@ const generateMarkdown = require("./utils/generateMarkdown");
 // console.log(generateMarkdown({ title: "Ewelina" }));
 
 // list of licenses
-// const gitHubLicenses = {
-//   mit: "https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt",
-// };
+const gitHubLicenses = {
+  MIT: "https://raw.githubusercontent.com/git/git-scm.com/main/MIT-LICENSE.txt",
+};
 
+// function to write README file
+function writeToFile(test, data) {
+  const generateMD = generateMarkdown(data);
+
+  fs.writeFile("test.md", generateMD, (err) =>
+    err ? console.error(err) : console.log("Success!")
+  );
+}
+
+// Request for information
 inquirer
   .prompt([
     {
@@ -71,22 +83,28 @@ inquirer
   .then((answers) => {
     console.log(answers);
 
-    const generateMD = generateMarkdown(answers);
-
-    fs.writeFile("test.txt", generateMD, (err) =>
-      err ? console.error(err) : console.log("Success!")
-    );
+    if (answers.license == "N/A") {
+    } else {
+      const licenseUrl = gitHubLicenses[answers.license];
+      https
+        .get(licenseUrl, (res) => {
+          res.on("data", (body) => {
+            answers.licenseText = body.toString();
+            writeToFile("test", answers);
+          });
+        })
+        .on("error", (e) => {
+          console.log(e);
+        });
+    }
   })
   .catch((error) => {
     if (error.isTtyError) {
-      console.log("Prompt couldn't be rendered in the current environment");
+      console.log(error);
     } else {
-      // Something else went wrong
+      console.log("Unexpected Error");
     }
   });
-
-// function to write README file
-function writeToFile(fileName, data) {}
 
 // function to initialize program
 function init() {}
