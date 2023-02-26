@@ -27,6 +27,14 @@ ${licenseBadge[answers.license]}
 ## Description
   ${answers.description}
 
+## Table of Content
+ 1. [Installation](#installation)
+ 1. [Usage](#usage)
+ 1. [License](#license)
+ 1. [Contributing](#contributing)
+ 1. [Test](#test)
+ 1. [Questions](#questions)
+
 ## Installation
   ${answers.installation}
 
@@ -45,7 +53,7 @@ ${licenseBadge[answers.license]}
 ## Questions
   If you have additional questions, send me a message at ${mailTo}.
   
-  View more of my projects on my Github profile: ${githubLink} 
+  View more projects on my Github profile: ${githubLink} 
 `;
 }
 

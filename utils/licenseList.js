@@ -17,19 +17,21 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.`,
+SOFTWARE.
+
+> For more information, please refer to [LINK](https://opensource.org/licenses/MIT)`,
 
   "GNU General Public License v3.0": `
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
-> For more information, please refer to [LINK](https://choosealicense.com/licenses/gpl-3.0/)
+> For more information, please refer to [LINK](https://www.gnu.org/licenses/gpl-3.0)
 `,
   "Apache License 2.0": `
 Version 2.0, January 2004
                         
-> For more information, please refer to [LINK](http://www.apache.org/licenses/)
+> For more information, please refer to [LINK](https://opensource.org/licenses/Apache-2.0)
 `,
   "Boost Software License 1.0": `
 Version 1.0 - August 17th, 2003
@@ -55,6 +57,8 @@ SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
 FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
+
+> For more information, please refer to [LINK](https://www.boost.org/LICENSE_1_0.txt)
 `,
 };
 

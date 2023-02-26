@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 // prompt for questions
 const inquirer = require("inquirer");
+//
 const util = require("util");
 // creates data to be written down by fs
 const generateMarkdown = require("./utils/generateMarkdown");
@@ -69,12 +70,8 @@ const promptUser = () =>
 
 // function to write README file
 promptUser()
-  .then((answers) => writeFileAsync("test.md", generateMarkdown(answers)))
+  .then((answers) =>
+    writeFileAsync("./exports/README.md", generateMarkdown(answers))
+  )
   .then(() => console.log("Success!"))
   .catch((err) => console.error(err));
-
-// function to initialize program
-function init() {}
-
-// function call to initialize program
-init();
