@@ -42,7 +42,6 @@ const promptUser = () =>
         "GNU General Public License v3.0",
         "Apache License 2.0",
         "Boost Software License 1.0",
-        "The Unlicense",
       ],
       name: "license",
     },
