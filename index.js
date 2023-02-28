@@ -4,11 +4,11 @@ const fs = require("fs");
 const path = require("path");
 // prompt for questions
 const inquirer = require("inquirer");
-//
+// support internal API
 const util = require("util");
 // creates data to be written down by fs
 const generateMarkdown = require("./utils/generateMarkdown");
-
+// returns a version with promises
 const writeFileAsync = util.promisify(fs.writeFile);
 
 // Request for information
@@ -53,17 +53,17 @@ const promptUser = () =>
     },
     {
       type: "input",
-      message: "Write are the project tests:",
+      message: "What are the project tests:",
       name: "tests",
     },
     {
       type: "input",
-      message: "Write your gitHub username:",
+      message: "What is your gitHub username:",
       name: "username",
     },
     {
       type: "input",
-      message: "Write your email:",
+      message: "What is your email:",
       name: "email",
     },
   ]);

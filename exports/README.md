@@ -1,11 +1,11 @@
 
-# Ewelina 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+# Module 11 Challenge: Professional README Generator 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-  a
+  A command-line application to generate README.md file
 
-## Table of content
+## Table of Contents
  1. [Installation](#installation)
  1. [Usage](#usage)
  1. [License](#license)
@@ -14,28 +14,42 @@
  1. [Questions](#questions)
 
 ## Installation
-  a
+  Uses Inquirer package
 
 ## Usage
-  a
+  tbc
 
 ## License
-  GNU General Public License v3.0;
+  MIT
+    Copyright (c) 2023 EAmrogowicz
     
- Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-> For more information, please refer to [LINK](https://www.gnu.org/licenses/gpl-3.0)
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+> For more information, please refer to [LINK](https://opensource.org/licenses/MIT)
 
 ## Contributing
-  a
+  tbc
 
 ## Tests
-  a
+  tbc
 
 ## Questions
-  If you have additional questions, send me a message at [my email](mailto:ewelina@gmail.com).
+  If you have additional questions, send me a message at [my email](mailto:test@test.com).
   
-  View more of my projects on my Github profile: [GitHub Link](https://github.com/EAMrogowicz) 
+  View more projects on my Github profile: [GitHub Link](https://github.com/EAmrogowicz) 

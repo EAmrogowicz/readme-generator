@@ -1,6 +1,8 @@
+// import data from other file
 const licenseList = require("./licenseList");
 const licenseBadge = require("./licenseBadge");
-const moment = require("moment"); // require
+// get current year from Moment.js
+const moment = require("moment");
 const year = moment().format("YYYY");
 
 // function to generate markdown for README
@@ -9,6 +11,7 @@ function generateMarkdown(answers) {
   const githubLink = `[GitHub Link](https://github.com/${answers.username})`;
   const mailTo = `[my email](mailto:${answers.email})`;
 
+  // checks type of license
   if (answers.license == "N/A") {
     licenseText = `This project does NOT have a license.`;
   } else if (answers.license == "MIT") {
@@ -58,5 +61,3 @@ ${licenseBadge[answers.license]}
 }
 
 module.exports = generateMarkdown;
-
-//   ## ${answers.tableOfContent}
